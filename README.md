@@ -13,7 +13,8 @@ Ce script gère uniquement la rotation entre deux fonds d'écran : un pour le 
 1. **Render le script exécutable :**
    ```bash
    chmod +x wallper-rotation.sh
-   ```
+   ```  
+   
 2. **Lancer le script d'installation :**
    ```bash
    ./wallper-rotation.sh
@@ -32,7 +33,7 @@ Ce script gère uniquement la rotation entre deux fonds d'écran : un pour le 
 
 4. **Désinstallation :**
    ```bash
-   ./wallper-rotation.sh --uninstall
+   ./usr/local/bin/wallper-rotation.sh --uninstall
    ```
    Cela supprime le service, le timer et le script associé.
 
