@@ -1,7 +1,7 @@
 #!/bin/bash
 
-SERVICE_NAME="wallpapers-rotation"
-SCRIPT_PATH="/usr/local/bin/change-wallpaper.sh"
+SERVICE_NAME="wallpaper-rotation"
+SCRIPT_PATH="/usr/local/bin/wallpaper-rotation"
 SYSTEMD_USER_DIR="$HOME/.config/systemd/user"
 SERVICE_FILE="$SYSTEMD_USER_DIR/${SERVICE_NAME}.service"
 TIMER_FILE="$SYSTEMD_USER_DIR/${SERVICE_NAME}.timer"
@@ -29,7 +29,7 @@ if ! command -v plasma-apply-wallpaperimage &> /dev/null; then
     exit 1
 fi
 
-if [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 20 ]; then
+if [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 19 ]; then
     WALLPAPER=$DAY_WALLPAPER
 else
     WALLPAPER=$NIGHT_WALLPAPER
@@ -55,7 +55,7 @@ EOF
     # Timer systemd
     cat << EOF > "$TIMER_FILE"
 [Unit]
-Description=Wallpaper rotation every hour
+Description=Wallpaper rotation every 5 minutes
 
 [Timer]
 OnStartupSec=0
@@ -66,7 +66,7 @@ Persistent=true
 Unit=${SERVICE_NAME}.service
 
 [Install]
-WantedBy=timers.target
+WantedBy=default.target
 EOF
 
     systemctl --user daemon-reload
@@ -75,7 +75,6 @@ EOF
     echo "Installation terminée. Le fond d'écran sera mis à jour automatiquement."
 }
 
-## To Uninstall ##
 function uninstall() {
     echo "Désinstallation du service '$SERVICE_NAME'..."
 
