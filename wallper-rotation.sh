@@ -73,6 +73,7 @@ EOF
     echo "✅ Installation terminée. Le fond d'écran sera mis à jour automatiquement."
 }
 
+## To Uninstall ##
 function uninstall() {
     echo "🧹 Désinstallation du service '$SERVICE_NAME'..."
 
