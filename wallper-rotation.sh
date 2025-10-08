@@ -60,7 +60,9 @@ Description=Wallpaper rotation every hour
 [Timer]
 OnStartupSec=0
 OnBootSec=5min
-OnUnitActiveSec=1h
+OnUnitActiveSec=5min
+AccuracySec=1min
+Persistent=true
 Unit=${SERVICE_NAME}.service
 
 [Install]
