@@ -29,7 +29,7 @@ if ! command -v plasma-apply-wallpaperimage &> /dev/null; then
     exit 1
 fi
 
-if [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 19 ]; then
+if [ "$HOUR" -ge 8 ] && [ "$HOUR" -lt 20 ]; then
     WALLPAPER=$DAY_WALLPAPER
 else
     WALLPAPER=$NIGHT_WALLPAPER
