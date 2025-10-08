@@ -7,7 +7,7 @@ SERVICE_FILE="$SYSTEMD_USER_DIR/${SERVICE_NAME}.service"
 TIMER_FILE="$SYSTEMD_USER_DIR/${SERVICE_NAME}.timer"
 
 function install() {
-    echo "📦 Installation du script et du service '$SERVICE_NAME'..."
+    echo "Installation du script et du service '$SERVICE_NAME'..."
 
     mkdir -p "$SYSTEMD_USER_DIR"
 
@@ -70,18 +70,18 @@ EOF
     systemctl --user daemon-reload
     systemctl --user enable --now "${SERVICE_NAME}.timer"
 
-    echo "✅ Installation terminée. Le fond d'écran sera mis à jour automatiquement."
+    echo "Installation terminée. Le fond d'écran sera mis à jour automatiquement."
 }
 
 ## To Uninstall ##
 function uninstall() {
-    echo "🧹 Désinstallation du service '$SERVICE_NAME'..."
+    echo "Désinstallation du service '$SERVICE_NAME'..."
 
     systemctl --user disable --now "${SERVICE_NAME}.timer"
     rm -f "$SCRIPT_PATH" "$SERVICE_FILE" "$TIMER_FILE"
     systemctl --user daemon-reload
 
-    echo "✅ Désinstallation terminée."
+    echo "Désinstallation terminée."
 }
 
 # Point d'entrée
