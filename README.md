@@ -21,7 +21,7 @@ Ce script gère uniquement la rotation entre deux fonds d'écran : un pour le 
 
    Cela installe automatiquement le service et le timer systemd utilisateur, qui assurent la rotation automatique du fond d'écran à chaque démarrage de session et toutes les heures.
 
-4. **Tester le script :**
+3. **Tester le script :**  
     Une fois le script installé sous le nom wallpaper-rotation dans /usr/local/bin, tu peux le lancer manuellement en lui passant une heure en argument pour simuler le comportement à ce moment-là.  
 
     Exemple pour simuler le fond qui serait appliqué à 22H00 :  
@@ -29,7 +29,7 @@ Ce script gère uniquement la rotation entre deux fonds d'écran : un pour le 
    ./usr/local/bin/wallper-rotation.sh 22
    ```
 
-3. **Désinstallation :**
+4. **Désinstallation :**
    ```bash
    ./wallper-rotation.sh --uninstall
    ```
