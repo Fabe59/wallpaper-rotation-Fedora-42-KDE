@@ -58,8 +58,7 @@ EOF
 Description=Wallpaper rotation every 5 minutes
 
 [Timer]
-OnStartupSec=0
-OnBootSec=5min
+OnStartupSec=2sec
 OnUnitActiveSec=5min
 AccuracySec=1min
 Persistent=true
