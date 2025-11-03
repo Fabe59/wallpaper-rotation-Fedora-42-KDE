@@ -1,4 +1,4 @@
-# wallpaper rotation Fedora KDE
+# wallpaper rotation Fedora 42 KDE
 
 Ce script Bash permet de faire tourner automatiquement les fonds d'écran (wallpapers) sur un environnement de bureau KDE sous Fedora.  
 Ce script gère uniquement la rotation entre deux fonds d'écran : un pour le jour et un pour la nuit.
